@@ -1,0 +1,8 @@
+import joblib
+
+# Save the best model
+joblib.dump(best_model, 'quote_classifier.pkl')
+
+# To load and use the model later
+# loaded_model = joblib.load('quote_classifier.pkl')
+# new_predictions = loaded_model.predict(X_test)
