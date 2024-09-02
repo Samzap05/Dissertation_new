@@ -1,0 +1,22 @@
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import accuracy_score
+
+# ... (Assuming 'features_df' and 'df' are already defined)
+
+# Create a binary target variable
+df['target'] = df['author'].apply(lambda x: 1 if x == 'Albert Einstein' else 0)
+
+# Split the data into training and testing sets (e.g., 80/20 split)
+X_train, X_test, y_train, y_test = train_test_split(features_df, df['target'], test_size=0.2, random_state=42)
+
+# Initialize and train the Logistic Regression model
+model = LogisticRegression()
+model.fit(X_train, y_train)
+
+# Make predictions on the test set
+y_pred = model.predict(X_test)
+
+# Evaluate the model's accuracy
+accuracy = accuracy_score(y_test, y_pred)
+print(f"Accuracy: {accuracy}")
