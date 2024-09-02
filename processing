@@ -1,0 +1,13 @@
+import re
+
+# Define a function to clean the text data
+def clean_text(text):
+    text = re.sub(r'\s+', ' ', text)  # Replace multiple spaces with a single space
+    text = re.sub(r'[^\w\s]', '', text)   # Remove punctuation
+    text = text.lower()               # Convert text to lowercase
+    return text.strip()               # Remove leading and trailing spaces
+
+# Apply the cleaning function to the text column
+df['text'] = df['text'].apply(clean_text)
+
+print(df.head())  # Display the cleaned data
