@@ -1,0 +1,18 @@
+import time
+
+# Assuming `best_model` is your trained model and `X_test` is your test data
+
+# Step 1: Record the start time
+start_time = time.time()
+
+# Step 2: Run the prediction
+y_pred_best = best_model.predict(X_test)
+
+# Step 3: Record the end time
+end_time = time.time()
+
+# Step 4: Calculate the elapsed time
+execution_time = end_time - start_time
+
+print(f"Predictions made successfully. Accuracy: {accuracy_score(y_test, y_pred_best):.4f}")
+print(f"Time taken for predictions: {execution_time:.6f} seconds")
