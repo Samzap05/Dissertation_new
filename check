@@ -1,0 +1,11 @@
+try:
+    # Example prediction with error handling
+    new_predictions = best_model.predict(X_test)
+    print(f"Predictions made successfully. Accuracy: {accuracy_score(y_test, new_predictions):.4f}")
+except Exception as e:
+    print(f"An error occurred during prediction: {str(e)}")
+
+# Possible improvements:
+# - Experiment with different models (e.g., RandomForest, SVM)
+# - Perform more advanced feature engineering
+# - Use more data or explore different subreddits/page
